@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+    <div class="col-md-6 col-lg-4 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Add Product</h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Add Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
